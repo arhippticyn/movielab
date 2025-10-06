@@ -1,0 +1,29 @@
+.movie {
+    padding: 15px;
+}
+
+.movieInfo {
+    display: flex;
+}
+
+.movieInfoImg {
+    height: 500px;
+}
+
+.movieInfoText {
+    padding-left: 15px;
+}
+
+.movieInfoTextGenresItems {
+    display: flex;
+    column-gap: 15px;
+}
+
+.movieInfoTextGenresItem {
+    list-style: none;
+    font-size: 18px;
+}
+
+hr {
+    
+}
