@@ -1,0 +1,13 @@
+.cast {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.castItem {
+    list-style: none;
+}
+
+.castItemImg {
+    height: 200px;
+}

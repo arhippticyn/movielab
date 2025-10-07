@@ -1,9 +1,12 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import Home from './page/Home.jsx';
 import Movies from './page/Movies.jsx';
 import Movie from "./page/Movie.jsx";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import './App.css';
+import Cast from "./components/Cast.jsx";
+import Rewiews from "./components/Rewiews.jsx";
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3'
 
@@ -27,16 +30,19 @@ function App() {
   },[])
 
   return (
-    <div>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/movies'>Movies</Link>
+    <div className='app'>
+      <nav className="nav">
+        <NavLink className="appLink" to='/' end>Home</NavLink>
+        <NavLink className="appLink" to='/movies'>Movies</NavLink>
       </nav>
 
       <Routes>
       <Route path='/' element={<Home data={data} />} />
       <Route path='/movies' element={<Movies />} />
-      <Route path="/movies/:id" element={<Movie />} />
+      <Route path="/movies/:id" element={<Movie />}>
+      <Route path="cast" element={<Cast />} />
+      <Route path="reviews" element={<Rewiews />} />
+      </Route>
       </Routes>
     </div>
   );

@@ -1,0 +1,9 @@
+.home {
+    padding: 10px 15px;
+}
+
+.homeNav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}

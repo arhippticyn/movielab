@@ -1,23 +1,19 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Link, Links } from "react-router-dom";
-import axios from 'axios';
-import { useState } from "react";
+import styles from '../styles/Home.module.css'
 
 
 
 const Home = ({data}) => {
   return (
-    <div>
-    <h1>Trending tody</h1>
+    <div className={styles.home}>
+    <h1 className={styles.homeTitle}>Trending tody</h1>
 
-    <nav>
+    <nav className={styles.homeNav}>
       {data.map((e) => {
         return <Link to={`/movies/${e.id}`}>{e.title}</Link>
     })}
     </nav>
-
-    
-    
     </div>
   )
 }
