@@ -1,15 +1,16 @@
   import React, { useEffect, useState } from 'react';
   import { useParams, Link, Outlet } from 'react-router-dom';
   import axios from 'axios';
-  import  styles  from '../styles/Movie.module.css'
+  import  styles  from '../styles/Movie.module.css';
+  import { IoArrowBackOutline } from "react-icons/io5";
 
   const Movie = () => {
-    const { id } = useParams()
+    const { movieId } = useParams()
     const [movie, setMovie] = useState([])
 
     const FetchMovie = async () => {
       try {
-        const response = await axios.get(`/movie/${id}?language=en-US&api_key=1bac43eb3178f898a40965000a977735`)
+        const response = await axios.get(`/movie/${movieId}?language=en-US&api_key=1bac43eb3178f898a40965000a977735`)
         setMovie(response.data)
         console.log(movie)
       }
@@ -20,14 +21,15 @@
 
     useEffect(() => {
       FetchMovie()
-    },[id])
+    },[movieId])
 
     const year = movie.release_date?.split('-')[0]
 
     return (
       <div className={styles.movie}>
+        <Link className={styles.linkHome} to='/' end><IoArrowBackOutline /> Go back</Link>
         <div className={styles.movieInfo}>
-        <img className={styles.movieInfoImg} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={id} />
+        <img className={styles.movieInfoImg} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movieId} />
 
         <div className={styles.movieInfoText}>
           <h2 className={styles.movieInfoTextTitle}>{movie.title} ({year})</h2>

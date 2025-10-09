@@ -6,11 +6,11 @@ import styles from '../styles/Cast.module.css';
 
 const Cast = () => {
     const [cast, setCast] = useState([])
-    const { id } = useParams()
+    const { movieId } = useParams()
 
     const FetchCast = async () => {
         try {
-            const response = await axios.get(`/movie/${id}/credits?api_key=1bac43eb3178f898a40965000a977735&language=en-US`)
+            const response = await axios.get(`/movie/${movieId}/credits?api_key=1bac43eb3178f898a40965000a977735&language=en-US`)
         setCast(response.data.cast)
         }
         catch {
@@ -20,7 +20,7 @@ const Cast = () => {
 
     useEffect(() => {
         FetchCast()
-    }, [id])
+    }, [movieId])
   return (
     <ul className={styles.cast}>
         {cast.map((cast) => (

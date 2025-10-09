@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Rewiews = () => {
-    const { id } = useParams()
+    const { movieId } = useParams()
     const [reviews, setReviews] = useState([])
 
     const FetchReviews = async () => {
         try {
-            const response = await axios.get(`/movie/${id}/reviews?language=en-US&api_key=1bac43eb3178f898a40965000a977735`)
+            const response = await axios.get(`/movie/${ movieId}/reviews?language=en-US&api_key=1bac43eb3178f898a40965000a977735`)
             setReviews(response.data.results)
         }
         catch {
@@ -18,7 +18,7 @@ const Rewiews = () => {
 
     useEffect(() => {
         FetchReviews()
-    }, [id])
+    }, [movieId])
   return (
     <div>
         {reviews && reviews.length > 0 ? (
