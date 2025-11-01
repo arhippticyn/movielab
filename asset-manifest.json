@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.32f11c1d.css",
+    "main.js": "/static/js/main.6792e95e.js",
+    "static/css/434.31527ca7.chunk.css": "/static/css/434.31527ca7.chunk.css",
+    "static/js/434.e87bdb42.chunk.js": "/static/js/434.e87bdb42.chunk.js",
+    "static/css/12.d91e7fac.chunk.css": "/static/css/12.d91e7fac.chunk.css",
+    "static/js/12.ca200604.chunk.js": "/static/js/12.ca200604.chunk.js",
+    "static/css/198.96eb927c.chunk.css": "/static/css/198.96eb927c.chunk.css",
+    "static/js/198.a690278a.chunk.js": "/static/js/198.a690278a.chunk.js",
+    "static/css/181.e8eed167.chunk.css": "/static/css/181.e8eed167.chunk.css",
+    "static/js/181.0ff928a0.chunk.js": "/static/js/181.0ff928a0.chunk.js",
+    "static/js/717.50c3a397.chunk.js": "/static/js/717.50c3a397.chunk.js",
+    "static/js/453.7aa2801d.chunk.js": "/static/js/453.7aa2801d.chunk.js",
+    "static/js/318.55bccacc.chunk.js": "/static/js/318.55bccacc.chunk.js",
+    "index.html": "/index.html",
+    "main.32f11c1d.css.map": "/static/css/main.32f11c1d.css.map",
+    "main.6792e95e.js.map": "/static/js/main.6792e95e.js.map",
+    "434.31527ca7.chunk.css.map": "/static/css/434.31527ca7.chunk.css.map",
+    "434.e87bdb42.chunk.js.map": "/static/js/434.e87bdb42.chunk.js.map",
+    "12.d91e7fac.chunk.css.map": "/static/css/12.d91e7fac.chunk.css.map",
+    "12.ca200604.chunk.js.map": "/static/js/12.ca200604.chunk.js.map",
+    "198.96eb927c.chunk.css.map": "/static/css/198.96eb927c.chunk.css.map",
+    "198.a690278a.chunk.js.map": "/static/js/198.a690278a.chunk.js.map",
+    "181.e8eed167.chunk.css.map": "/static/css/181.e8eed167.chunk.css.map",
+    "181.0ff928a0.chunk.js.map": "/static/js/181.0ff928a0.chunk.js.map",
+    "717.50c3a397.chunk.js.map": "/static/js/717.50c3a397.chunk.js.map",
+    "453.7aa2801d.chunk.js.map": "/static/js/453.7aa2801d.chunk.js.map",
+    "318.55bccacc.chunk.js.map": "/static/js/318.55bccacc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32f11c1d.css",
+    "static/js/main.6792e95e.js"
+  ]
+}
