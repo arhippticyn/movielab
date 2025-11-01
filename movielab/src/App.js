@@ -1,12 +1,16 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import Home from './page/Home.jsx';
-import Movies from './page/Movies.jsx';
-import Movie from "./page/Movie.jsx";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import './App.css';
-import Cast from "./components/Cast.jsx";
-import Rewiews from "./components/Rewiews.jsx";
+import { Suspense, lazy } from "react";
+import { RotatingLines } from 'react-loader-spinner'
+
+
+const Home = lazy(() => import('./page/Home.jsx'))
+const Movies = lazy(() => import('./page/Movies.jsx'))
+const Movie = lazy(() => import('./page/Movie.jsx'))
+const Cast = lazy(() => import('./components/Cast.jsx'))
+const Rewiews = lazy(() => import('./components/Rewiews.jsx'))
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3'
 
@@ -36,6 +40,17 @@ function App() {
         <NavLink className="appLink" to='/movies'>Movies</NavLink>
       </nav>
 
+      <Suspense fallback={<RotatingLines
+visible={true}
+height="96"
+width="96"
+color="grey"
+strokeWidth="5"
+animationDuration="0.75"
+ariaLabel="rotating-lines-loading"
+wrapperStyle={{}}
+wrapperClass=""
+/>} >
       <Routes>
       <Route path='/' element={<Home data={data} />} />
       <Route path='/movies' element={<Movies />} />
@@ -44,6 +59,7 @@ function App() {
       <Route path="reviews" element={<Rewiews />} />
       </Route>
       </Routes>
+      </Suspense>
     </div>
   );
 }

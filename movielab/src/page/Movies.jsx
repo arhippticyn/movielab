@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from '../styles/Movies.module.css'
 
 const Movies = () => {
-  const [value, setValue] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
   const [data, setData] = useState([])
 
-  const handleChange = (e) => setValue(e.target.value)
+  const value = searchParams.get('value')
 
   const SearchFetch = async (e) => {
     e.preventDefault()
@@ -21,7 +21,7 @@ const Movies = () => {
   return (
     <div className={styles.movies}>
       <form action="" onSubmit={SearchFetch} className={styles.moviesSearch}>
-        <input type="text" onChange={handleChange} value={value} />
+        <input type="text" onChange={e => setSearchParams({ value: e.target.value})} value={value} />
 
         <button type="submit">Search</button>
       </form>

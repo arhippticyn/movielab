@@ -1,5 +1,5 @@
   import React, { useEffect, useState } from 'react';
-  import { useParams, Link, Outlet } from 'react-router-dom';
+  import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
   import axios from 'axios';
   import  styles  from '../styles/Movie.module.css';
   import { IoArrowBackOutline } from "react-icons/io5";
@@ -7,6 +7,8 @@
   const Movie = () => {
     const { movieId } = useParams()
     const [movie, setMovie] = useState([])
+    const location = useLocation()
+    const BackLinkHref = location.state?.from ?? "/movies" 
 
     const FetchMovie = async () => {
       try {
@@ -27,7 +29,7 @@
 
     return (
       <div className={styles.movie}>
-        <Link className={styles.linkHome} to='/' end><IoArrowBackOutline /> Go back</Link>
+        <Link className={styles.linkHome} to={BackLinkHref} end><IoArrowBackOutline /> Go back</Link>
         <div className={styles.movieInfo}>
         <img className={styles.movieInfoImg} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movieId} />
 
